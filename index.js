@@ -19,7 +19,7 @@ const reviewRouter = require("./routes/reviews");
 const hotelRouter = require("./routes/hotels");
 const ExpressError = require("./utils/ExpressError");
 
-mongoose.connect("mongodb://localhost:27017/yelp-hotel");
+mongoose.connect(<Mongo DB connection String>);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
@@ -36,7 +36,7 @@ const sessionConfig = {
   saveUninitialized: true,
   cookie: {
     httpOnly: true,
-    // secure: true,
+    secure: true,
     expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
     maxAge: 1000 * 60 * 60 * 24 * 7,
   },
