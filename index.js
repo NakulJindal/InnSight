@@ -19,7 +19,7 @@ const reviewRouter = require("./routes/reviews");
 const hotelRouter = require("./routes/hotels");
 const ExpressError = require("./utils/ExpressError");
 
-mongoose.connect(<Mongo DB connection String>);
+mongoose.connect(process.env.MONGO_URL);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));
