@@ -20,6 +20,7 @@ const reviewRouter = require("./routes/reviews");
 const hotelRouter = require("./routes/hotels");
 const ExpressError = require("./utils/ExpressError");
 
+const PORT = process.env.PORT || 4000;
 const dbUrl = process.env.MONGO_URL || "mongodb://localhost:27017/yelp-hotel";
 const secret = process.env.SECRET || "thisshouldbeabettersecret!";
 
@@ -44,7 +45,6 @@ store.on("error", function (e) {
 });
 
 const app = express();
-const PORT = 3000;
 const sessionConfig = {
   name: "session",
   secret,
